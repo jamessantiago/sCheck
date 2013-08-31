@@ -2,10 +2,8 @@
 ###############################
 # sCheck - Daily Error Report # 
 ###############################
-# Thanks to all who have commented on my blog to help improve this project
-# all beta testers and previous contributors to this script.
-#
-$Version = "6.15"
+
+$Version = "1.0"
 
 function Write-CustomOut ($Details){
 	$LogDate = Get-Date -Format T
@@ -78,7 +76,8 @@ If ($SetupSetting) {
 	cls
 	Write-Host
 	Write-Host -ForegroundColor Yellow "Welcome to sCheck by SantiagoDevelopment.com"
-	Write-Host -ForegroundColor Yellow "============================================"
+    Write-Host -ForegroundColor Yellow "originally vCheck by Virtu-Al http://virtu-al.net"
+	Write-Host -ForegroundColor Yellow "================================================="
 	Write-Host -ForegroundColor Yellow "This is the first time you have run this script or you have re-enabled the setup wizard."
 	Write-Host
 	Write-Host -ForegroundColor Yellow "To re-run this wizard in the future please use sCheck.ps1 -Config"
