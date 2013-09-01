@@ -9,9 +9,9 @@ $proxy ="$false"
 
 . $ScriptPath\scheckutils.ps1 | Out-Null
 if ($proxy -eq "$false"){
-	$NotInstalled = Get-sCheckPlugin -NotInstalled | Where { $_.Category -eq "vSphere" } | Select Name, version, Status, Description
+	$NotInstalled = Get-sCheckPlugin -NotInstalled | Where { $_.Category -eq "sSphere" } | Select Name, version, Status, Description
 } else {
-	$NotInstalled = Get-sCheckPlugin -NotInstalled -Proxy $proxy | Where { $_.Category -eq "vSphere" } | Select Name, version, Status, Description
+	$NotInstalled = Get-sCheckPlugin -NotInstalled -Proxy $proxy | Where { $_.Category -eq "sSphere" } | Select Name, version, Status, Description
 }
 $NotInstalled
 
