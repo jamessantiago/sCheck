@@ -4,14 +4,14 @@ $proxy ="$false"
 # End of Settings
 
 # Changelog
-## 1.1 : Adding proxy support for Get-vCheckPlugin cmdlet
+## 1.1 : Adding proxy support for Get-sCheckPlugin cmdlet
 ## 1.2 : Added support for only vSphere plugins
 
-. $ScriptPath\vcheckutils.ps1 | Out-Null
+. $ScriptPath\scheckutils.ps1 | Out-Null
 if ($proxy -eq "$false"){
-	$NotInstalled = Get-vCheckPlugin -NotInstalled | Where { $_.Category -eq "vSphere" } | Select Name, version, Status, Description
+	$NotInstalled = Get-sCheckPlugin -NotInstalled | Where { $_.Category -eq "vSphere" } | Select Name, version, Status, Description
 } else {
-	$NotInstalled = Get-vCheckPlugin -NotInstalled -Proxy $proxy | Where { $_.Category -eq "vSphere" } | Select Name, version, Status, Description
+	$NotInstalled = Get-sCheckPlugin -NotInstalled -Proxy $proxy | Where { $_.Category -eq "vSphere" } | Select Name, version, Status, Description
 }
 $NotInstalled
 
@@ -21,4 +21,4 @@ $Comments = "The following Plugins are not up to date or not installed"
 $Display = "Table"
 $Author = "Alan Renouf, Jake Robinson, Frederic Martin"
 $PluginVersion = 1.3
-$PluginCategory = "vCheck"
+$PluginCategory = "sCheck"
