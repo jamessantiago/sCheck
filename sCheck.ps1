@@ -59,7 +59,7 @@ Function Invoke-Settings ($Filename, $GB) {
 # Add all global variables.
 $ScriptPath = (Split-Path ((Get-Variable MyInvocation).Value).MyCommand.Path)
 $PluginsFolder = $ScriptPath + "\Plugins\"
-$Plugins = Get-ChildItem -Path $PluginsFolder -filter "*.ps1" -Recurse | Sort Name
+$Plugins = Get-ChildItem -Path $PluginsFolder -filter "*.ps1" -Recurse | Sort $($_.Directory.Name + " - " + $_.Name)
 $GlobalVariables = $ScriptPath + "\GlobalVariables.ps1"
 
 
