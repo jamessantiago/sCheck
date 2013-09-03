@@ -59,7 +59,7 @@ Function Invoke-Settings ($Filename, $GB) {
 # Add all global variables.
 $ScriptPath = (Split-Path ((Get-Variable MyInvocation).Value).MyCommand.Path)
 $PluginsFolder = $ScriptPath + "\Plugins\"
-$Plugins = Get-ChildItem -Path $PluginsFolder -filter "*.ps1" | Sort Name
+$Plugins = Get-ChildItem -Path $PluginsFolder -filter "*.ps1" -Recurse | Sort $($_.Directory.Name + " - " + $_.Name)
 $GlobalVariables = $ScriptPath + "\GlobalVariables.ps1"
 
 
@@ -172,7 +172,7 @@ $MyReport += Get-CustomHeader0 ($Server)
 $Plugins | Foreach {
 	$TTR = [math]::round((Measure-Command {$Details = . $_.FullName}).TotalSeconds, 2)
 	$TTRTable = "" | Select Plugin, TimeToRun
-	$TTRTable.Plugin = $_.Name
+	$TTRTable.Plugin = $_.Directory.Name + " - " + $_.Name
 	$TTRTable.TimeToRun = $TTR
 	$TTRReport += $TTRTable
 	$ver = "{0:N1}" -f $PluginVersion
