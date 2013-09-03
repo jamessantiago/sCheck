@@ -172,7 +172,7 @@ $MyReport += Get-CustomHeader0 ($Server)
 $Plugins | Foreach {
 	$TTR = [math]::round((Measure-Command {$Details = . $_.FullName}).TotalSeconds, 2)
 	$TTRTable = "" | Select Plugin, TimeToRun
-	$TTRTable.Plugin = $_.Name
+	$TTRTable.Plugin = $_.Directory.Name + " - " + $_.Name
 	$TTRTable.TimeToRun = $TTR
 	$TTRReport += $TTRTable
 	$ver = "{0:N1}" -f $PluginVersion
