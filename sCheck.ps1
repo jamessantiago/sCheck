@@ -104,16 +104,10 @@ if(!(Test-Path ($StylePath))) {
 	Write-Debug "Using $($StylePath)"
 }
 
-# Import the Style
-. ("$($StylePath)\Style.ps1")
-
-
 Function Get-Base64Image ($Path) {
 	$pic = Get-Content $Path -Encoding Byte
 	[Convert]::ToBase64String($pic)
 }
-
-$HeaderImg = Get-Base64Image ("$($StylePath)\Header.jpg")
 
 Function Get-CustomHTML ($Header){
 	$Report = $HTMLHeader -replace "_HEADER_", $Header
@@ -164,6 +158,12 @@ Function Get-HTMLDetail ($Heading, $Detail){
 	$Report = ($HTMLDetail -replace "_Heading_", $Heading) -replace "_Detail_", $Detail
 	Return $Report
 }
+
+# Import the Style
+. ("$($StylePath)\Style.ps1")
+
+# Loads Header
+$HeaderImg = Get-Base64Image ("$($StylePath)\Header.jpg")
 
 # Adding all plugins
 $TTRReport = @()
