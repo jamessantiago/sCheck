@@ -37,7 +37,7 @@ $PluginPath = (Split-Path ((Get-Variable MyInvocation).Value).MyCommand.Path)
 If ($PluginPath -notmatch 'plugins$') {
   $PluginPath += "\Plugins"
 }
-$plugins=get-childitem -Path $PluginPath | where {$_.name -match '.*\.ps1(?:\.disabled|)$'} |
+$plugins=get-childitem -Path $PluginPath -Recurse | where {$_.name -match '.*\.ps1(?:\.disabled|)$'} |
    Sort Name |
    Select Name, 
           @{Label="Plugin";expression={$_.Name -replace '(.*)\.ps1(?:\.disabled|)$', '$1'}},
