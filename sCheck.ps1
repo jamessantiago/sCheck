@@ -89,6 +89,7 @@ If ($SetupSetting) {
 	
 	Invoke-Settings -Filename $GlobalVariables -GB $true
 	Foreach ($plugin in $Plugins) { 
+        write-host -ForegroundColor Yellow "$($plugin.Directory.Name) - $($plugin.Name)"
 		Invoke-Settings -Filename $plugin.Fullname
 	}
 }
