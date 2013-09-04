@@ -38,9 +38,9 @@ If ($PluginPath -notmatch 'plugins$') {
   $PluginPath += "\Plugins"
 }
 $plugins=get-childitem -Path $PluginPath -Recurse | where {$_.name -match '.*\.ps1(?:\.disabled|)$'} |
-   Sort Name |
+   Sort Directory, Name |
    Select Name, 
-          @{Label="Plugin";expression={$_.Name -replace '(.*)\.ps1(?:\.disabled|)$', '$1'}},
+          @{Label="Plugin";expression={$_.Directory.Name + " - " + $_.Name -replace '(.*)\.ps1(?:\.disabled|)$', '$1'}},
           @{Label="Enabled";expression={$_.Name -notmatch '.*\.disabled$'}}
 
 ## Load the Windows Forms assembly
