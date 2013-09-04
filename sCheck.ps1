@@ -87,6 +87,7 @@ If ($SetupSetting) {
 	Write-Host -ForegroundColor Yellow "After completing ths wizard the sCheck report will be displayed on the screen."
 	Write-Host
 	
+    write-host -ForegroundColor Yellow "sCheck - Global Variables"
 	Invoke-Settings -Filename $GlobalVariables -GB $true
 	Foreach ($plugin in $Plugins) { 
         write-host -ForegroundColor Yellow "$($plugin.Directory.Name) - $($plugin.Name)"
