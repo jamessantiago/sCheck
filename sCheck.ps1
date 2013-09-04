@@ -159,11 +159,11 @@ Function Get-HTMLDetail ($Heading, $Detail){
 	Return $Report
 }
 
-# Import the Style
-. ("$($StylePath)\Style.ps1")
-
 # Loads Header
 $HeaderImg = Get-Base64Image ("$($StylePath)\Header.jpg")
+
+# Import the Style
+. ("$($StylePath)\Style.ps1")
 
 # Adding all plugins
 $TTRReport = @()
