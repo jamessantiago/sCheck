@@ -75,7 +75,7 @@ $CustomHTMLClose = @"
 	<!-- CustomHTMLClose -->
 </div>
 <div style='$($FontFamily) font-size: small;'>
-	<center>sCheck v$($version) by Alan Renouf (<a href='http://virtu-al.net' target='_blank'>http://virtu-al.net</a>) generated on $($ENV:Computername)</center>
+	<center>sCheck v$($version) by <a href='http://santiagodevelopment.com' target='_blank'>James Santiago</a> generated on $($ENV:Computername)</center>
 </div>
 </body>
 </html>
