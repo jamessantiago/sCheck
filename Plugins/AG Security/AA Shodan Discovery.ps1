@@ -1,8 +1,8 @@
-$Title = "Connection settings for vCenter"
-$Author = "Alan Renouf"
-$PluginVersion = 1.3
-$Header =  "Connection Settings"
-$Comments = "Connection Plugin for connecting to vSphere"
+$Title = "Shodan query results"
+$Author = "James Santiago"
+$PluginVersion = 1.0
+$Header =  "Shodan query results"
+$Comments = "Results are from the Shodan database and may indicate a vulnerability or system that should not be discoverable"
 $Display = "List"
 $PluginCategory = "Security"
 
