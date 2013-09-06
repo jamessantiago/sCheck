@@ -75,9 +75,8 @@ if ($config) {
 If ($SetupSetting) {
 	cls
 	Write-Host
-	Write-Host -ForegroundColor Yellow "Welcome to sCheck by SantiagoDevelopment.com"
-    Write-Host -ForegroundColor Yellow "originally vCheck by Virtu-Al http://virtu-al.net"
-	Write-Host -ForegroundColor Yellow "================================================="
+	Write-Host -ForegroundColor Yellow "Welcome to sCheck by SantiagoDevelopment.com originally vCheck by Virtu-Al http://virtu-al.net"
+	Write-Host -ForegroundColor Yellow "=============================================================================================="
 	Write-Host -ForegroundColor Yellow "This is the first time you have run this script or you have re-enabled the setup wizard."
 	Write-Host
 	Write-Host -ForegroundColor Yellow "To re-run this wizard in the future please use sCheck.ps1 -Config"
@@ -87,10 +86,10 @@ If ($SetupSetting) {
 	Write-Host -ForegroundColor Yellow "After completing ths wizard the sCheck report will be displayed on the screen."
 	Write-Host
 	
-    write-host -ForegroundColor Yellow "sCheck - Global Variables"
+    write-host -ForegroundColor Cyan "sCheck - Global Variables"
 	Invoke-Settings -Filename $GlobalVariables -GB $true
 	Foreach ($plugin in $Plugins) { 
-        write-host -ForegroundColor Yellow "$($plugin.Directory.Name) - $($plugin.Name)"
+        write-host -ForegroundColor Cyan "$($plugin.Directory.Name) - $($plugin.Name)"
 		Invoke-Settings -Filename $plugin.Fullname
 	}
 }
