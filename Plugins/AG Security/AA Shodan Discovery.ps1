@@ -23,5 +23,5 @@ if ($Host.Version.Major -eq 3)
 }
 else
 {
-    Write-Host -ForegroundColor red "AA Shodan Discovery can only be ran under powershell v3"
+    Write-Host -ForegroundColor red "AA Shodan Discovery can only be with under powershell v3"
 }
